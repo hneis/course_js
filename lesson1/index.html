@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title></title>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.4.6/dist/js/uikit-icons.min.js"></script>
+
+        <script src='script.js' defer></script>
+    </head>
+    <body>
+    <div class="uk-section">
+        <div class="uk-container">
+            <form>
+                <fieldset class="uk-fieldset">
+
+                    <legend class="uk-legend">Degree converter</legend>
+
+                    <div class="uk-margin">
+                        <input id="celsius" class="uk-input" type="text" placeholder="Градусы Цельсия" oninput="convert(this.id)">
+                    </div>
+
+                    <div class="uk-margin">
+                        <input id="fahrenheit" class="uk-input" type="text" placeholder="Градусы Фаренгейт" oninput="convert(this.id)">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    </body>
+</html>
