@@ -7,21 +7,55 @@
     <style>
         table {
             border-collapse: collapse;
+            width: 100%;
+            height: 100%;
         }
         tr {
-            width: 20px;
-            height: 20px;
+            height: 40px;
         }
         td {
             border: 1px solid #888;
-            width: 20px;
-            height: 20px;
+            width: 40px;
             background-color: #eee;
         }
+        .cell {
+            width: 40px;
+            font-size: 28px;
+            line-height: 28px;
+            text-align: center;
+        }
+        .black-cell {
+            background: SkyBlue;
+        }
+        .white-cell {
+            background: #e2e9e9;
+        }
+        .label {
+            text-align: center;
+            vertical-align: center;
+        }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(9, 40px);
+}
+
+
+.scaleY { grid-area: 2 / 1 / 10 / 2; }
+
+.scaleX { grid-area: 1 / 2 / 2 / 10; }
+
+.chess { grid-area: 2 / 2 / 10 / 10; }
     </style>
 </head>
 <body>
-    <table id="game"></table>
-    <script src="game.js" defer></script>
+    <div class="grid-container">
+        <div class="scaleY"></div>
+        <div class="scaleX"></div>
+        <div class="chess">
+            <table id="chess"></table>
+        </div>
+    </div>
+    <script src="chess.js" defer></script>
 </body>
 </html>
