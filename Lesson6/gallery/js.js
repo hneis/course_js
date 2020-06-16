@@ -26,7 +26,25 @@ const gallery = {
     },
 
     openImage(src) {
-        this.getScreenContainer().querySelector(`.${this.settings.openedImageClass}`).src = src;
+        this.checkImageExistsAndOpen(
+            src,
+            () => {
+                this.getScreenContainer().querySelector(
+                    `.${this.settings.openedImageClass}`
+                ).src = src;
+            },
+            () => {
+                alert(`Image ${src} not exists`);
+                return;
+            }
+        );
+    },
+
+    checkImageExistsAndOpen(src, onload, onerror) {
+        var img = new Image();
+        img.onload = onload;
+        img.onerror = onerror;
+        img.src = src;
     },
 
     getScreenContainer() {
@@ -64,7 +82,7 @@ const gallery = {
     close() {
         document.querySelector(`.${this.settings.openedImageWrapperClass}`).remove();
     },
-}
+};
 
 window.addEventListener('load', () => {
     gallery.init({previewSelector: '.galleryPreviewsContainer'});
